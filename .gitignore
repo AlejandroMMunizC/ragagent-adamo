@@ -1,0 +1,47 @@
+# --------------- secrets ---------------
+.env
+.env.*
+!.env.example
+secretooo.py
+secret.py
+
+# --------------- python ---------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+*.manifest
+*.spec
+
+# --------------- virtualenvs ---------------
+.venv/
+venv/
+env/
+ENV/
+
+# --------------- jupyter ---------------
+.ipynb_checkpoints/
+
+# --------------- editors ---------------
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --------------- runtime artefacts ---------------
+LOGS/*.json
+!LOGS/.gitkeep
+
+# Cached models / FAISS dumps if you ever persist them
+*.index
+*.faiss
+*.pkl
