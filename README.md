@@ -17,6 +17,27 @@ any document corpus.
 
 ---
 
+## Screenshots
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="assets/ui-agent-answer.png" alt="RAGAGENT answering a question" width="280"><br/>
+      <sub>Answering from the local documents</sub>
+    </td>
+    <td align="center">
+      <img src="assets/ui-agent-answer2.png" alt="RAGAGENT answering a second question" width="280"><br/>
+      <sub>Another local-document answer</sub>
+    </td>
+    <td align="center">
+      <img src="assets/ui-agent-answer3.png" alt="RAGAGENT answering a third question" width="280"><br/>
+      <sub>Web-search fallback in action</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
 ## Demo questions
 
 Once the app is running, try asking things like:
