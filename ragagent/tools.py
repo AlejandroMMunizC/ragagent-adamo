@@ -26,6 +26,8 @@ from .rag import RagIndex
 # Tool 1 - local document retrieval
 # ---------------------------------------------------------------------------
 def make_document_search_tool(index: RagIndex) -> Tool:
+    available_docs = ", ".join(sorted(index._chunks_by_doc.keys())) or "(none)"
+
     def _run(question: str) -> str:
         chunks = index.retrieve(question, k=config.DEFAULT_K)
         if not chunks:
@@ -36,9 +38,12 @@ def make_document_search_tool(index: RagIndex) -> Tool:
         name="search_documents",
         func=_run,
         description=(
-            "Search the locally indexed documents (PDF, DOCX, XLSX) using "
-            "semantic embeddings. Use this tool whenever the user asks about "
-            "company-internal information."
+            "ALWAYS try this tool FIRST for any factual question. It performs "
+            "semantic search over the user's private local document collection "
+            f"({available_docs}). These documents describe internal company "
+            "information (products, prices, hours, FAQs, etc.) that is NOT on "
+            "the public web. Only fall back to `search_web` if this tool returns "
+            "'No relevant fragments were found in the local documents.'"
         ),
     )
 

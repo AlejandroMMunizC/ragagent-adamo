@@ -2,7 +2,8 @@
 
 from __future__ import annotations
 
-from langchain.agents import AgentType, initialize_agent
+from langchain.agents import initialize_agent
+from langchain.agents.agent_types import AgentType
 from langchain_openai import ChatOpenAI
 
 from . import config
